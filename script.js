@@ -11,8 +11,9 @@ card.addEventListener("mousedown", (ev) => {
   root.style.setProperty("--ripple-y", y);
 
   tempo = setInterval(() => {
-    console.log(++contador);
+    ++contador;
     if (contador === 2) {
+      remove();
       reset();
       return;
     }
