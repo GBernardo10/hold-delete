@@ -4,7 +4,7 @@ let tempo = null;
 let root = document.documentElement;
 
 card.addEventListener("mousedown", (ev) => {
-  console.log("iniciou");
+  console.log(ev.target);
   let x = (ev.clientX - card.offsetLeft) / card.offsetWidth;
   let y = (ev.clientY - card.offsetTop) / card.offsetHeight;
   root.style.setProperty("--ripple-x", x);
@@ -26,4 +26,10 @@ card.addEventListener("mouseup", () => {
 function reset() {
   clearInterval(tempo);
   contador = 0;
+}
+
+function remove() {
+  var deletou = false;
+  deletou = confirm("Tem certeza que deseja remover ?");
+  if (deletou) card.style.display = "none";
 }
